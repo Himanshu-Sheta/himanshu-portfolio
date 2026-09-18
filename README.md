@@ -30,7 +30,7 @@ npm install
 npm run dev
 ```
 
-The app runs on `http://localhost:3000` with Next.js App Router, React 19, TypeScript, Tailwind CSS, Framer Motion, and Turbopack.
+The app runs on `http://localhost:3000` with Next.js App Router, React 19, TypeScript, Tailwind CSS, Framer Motion, and Turbopack. Next.js is configured for a static export, so it can be hosted on Render's Static Site service.
 
 For a production check:
 
@@ -45,4 +45,4 @@ git add .
 git commit -m "Updated portfolio content"
 git push
 ```
-Render will automatically run `npm ci && npm run build`, start the Next.js server with `npm run start`, and update your online site.
+Render will automatically run `npm ci && npm run build`, publish the `out` directory, and update your online site.
