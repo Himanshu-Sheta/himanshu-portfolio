@@ -2,7 +2,9 @@
 
 > **Advanced Software Engineer & Data Engineer Portfolio**
 > 
-> Prepared for online deployment on **Render** (Account Email: `professorrrr31@gmail.com`).
+> GitHub Repository: [https://github.com/proffesorsheta/himanshu-portfolio](https://github.com/proffesorsheta/himanshu-portfolio)
+> 
+> Online Deployment Target: **Render** (`professorrrr31@gmail.com`)
 
 ---
 
@@ -17,52 +19,14 @@ This project is a high-performance, modern developer portfolio built for **Himan
 
 ---
 
-## 🛠️ Tech Stack & Dependencies
+## 🔄 Automatic CI/CD Pipeline (Render Auto-Deploy)
 
-- **Frontend Framework**: React 18 + Vite
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS + Glassmorphism UI
-- **Icons**: Lucide React
-- **Animations**: Framer Motion & Canvas-Confetti
-- **Deployment Spec**: Render Blueprint (`render.yaml`)
+When connected to Render, **Auto-Deploy is enabled by default**. 
 
----
-
-## 📁 Local Setup Instructions
-
+Whenever you push new changes to GitHub:
 ```bash
-# 1. Navigate to project folder
-cd "/Users/mr./Library/Mrr../website/portfolio"
-
-# 2. Install dependencies
-npm install
-
-# 3. Start local development server
-npm run dev
-
-# 4. Build for production
-npm run build
-```
-
----
-
-## 🌐 Deploying to Render (`professorrrr31@gmail.com`)
-
-This repository includes a pre-configured `render.yaml` blueprint file.
-
-### Step 1: Push to GitHub
-```bash
-git init
 git add .
-git commit -m "Initial portfolio commit"
-git branch -M main
-git remote add origin <your-github-repo-url>
-git push -u origin main
+git commit -m "Updated portfolio content"
+git push
 ```
-
-### Step 2: Deploy on Render
-1. Go to [https://dashboard.render.com](https://dashboard.render.com) and log in with `professorrrr31@gmail.com`.
-2. Click **New +** -> **Blueprint**.
-3. Connect your GitHub repository.
-4. Render will automatically detect `render.yaml` and configure the static site build (`npm run build`, publish dir: `./dist`).
-5. Click **Apply**! Your site will be live online with a custom Render domain URL (e.g. `himanshu-sheta-portfolio.onrender.com`) to add to your CV!
+Render will automatically trigger a build (`npm run build`) and update your online site live within seconds!
