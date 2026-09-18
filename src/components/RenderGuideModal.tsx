@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Rocket, CheckCircle2, Copy, ExternalLink, X, ShieldCheck, Mail, Sparkles } from 'lucide-react';
+import { Rocket, CheckCircle2, Copy, ExternalLink, X, ShieldCheck, Mail, Sparkles, Globe, GitBranch } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface RenderGuideModalProps {
@@ -15,34 +15,34 @@ export const RenderGuideModal: React.FC<RenderGuideModalProps> = ({ isOpen, onCl
   const renderSteps = [
     {
       step: "1",
-      title: "Sign in to Render.com",
-      desc: `Go to dashboard.render.com and sign up or sign in using your email: ${PERSONAL_INFO.renderAccountEmail}`
+      title: "Create a New GitHub Repository",
+      desc: "Go to github.com/new and create a new public repository named 'himanshu-portfolio'."
     },
     {
       step: "2",
       title: "Push Code to GitHub",
-      desc: "Initialize git in this project folder (/Users/mr./Library/Mrr../website/portfolio) and push to your GitHub account."
+      desc: "Run the terminal commands below to push your local code to your new GitHub repository."
     },
     {
       step: "3",
-      title: "Deploy via Render Blueprint",
-      desc: "Click 'New +' -> 'Blueprint' in Render dashboard and connect your GitHub repo. Render will automatically detect render.yaml!"
+      title: "Create New Static Site on Render",
+      desc: `Log in to dashboard.render.com with ${PERSONAL_INFO.renderAccountEmail}. Click 'New +' -> 'Static Site', and connect your new repository.`
     },
     {
       step: "4",
-      title: "Get Your Online URL",
-      desc: "Render will build and publish your website live at your custom Render URL (e.g. himanshu-sheta.onrender.com) so you can put it in your CV!"
+      title: "Enter Build & Publish Settings",
+      desc: "Set Build Command to `npm run build` and Publish Directory to `./dist`. Click 'Create Static Site'!"
     }
   ];
 
   const handleCopyCommand = () => {
-    navigator.clipboard.writeText(`cd "/Users/mr./Library/Mrr../website/portfolio"\ngit init\ngit add .\ngit commit -m "Initial Himanshu Sheta Portfolio"\ngit remote add origin <your-github-repo-url>\ngit push -u origin main`);
+    navigator.clipboard.writeText(`cd "/Users/mr./Library/Mrr../website/portfolio"\ngit remote add origin https://github.com/<your-username>/himanshu-portfolio.git\ngit branch -M main\ngit push -u origin main`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md">
       <div className="glass-panel w-full max-w-2xl rounded-3xl p-6 sm:p-8 border border-teal-500/40 shadow-2xl relative max-h-[90vh] overflow-y-auto">
         
         {/* Close Button */}
@@ -58,14 +58,14 @@ export const RenderGuideModal: React.FC<RenderGuideModalProps> = ({ isOpen, onCl
           
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-xs font-mono text-teal-300">
-              <Rocket className="w-3.5 h-3.5" />
-              <span>Render Deployment Blueprint</span>
+              <Globe className="w-3.5 h-3.5" />
+              <span>Direct Render Hosting Setup</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-              Deploying Online with <span className="text-teal-400">Render</span>
+              Host Online on <span className="text-teal-400">Render</span>
             </h3>
             <p className="text-slate-300 text-xs sm:text-sm">
-              Pre-configured for user account: <strong className="text-teal-300">{PERSONAL_INFO.renderAccountEmail}</strong>
+              Configured for account email: <strong className="text-teal-300">{PERSONAL_INFO.renderAccountEmail}</strong>
             </p>
           </div>
 
@@ -84,10 +84,21 @@ export const RenderGuideModal: React.FC<RenderGuideModalProps> = ({ isOpen, onCl
             ))}
           </div>
 
+          {/* Render Settings Summary Box */}
+          <div className="p-4 rounded-2xl bg-slate-900/90 border border-teal-500/30 space-y-2 text-xs">
+            <div className="font-bold text-white flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-teal-400" /> Render Static Site Settings:
+            </div>
+            <div className="grid grid-cols-2 gap-2 text-slate-300 font-mono pt-1">
+              <div>Build Command: <span className="text-teal-300">npm run build</span></div>
+              <div>Publish Directory: <span className="text-emerald-300">./dist</span></div>
+            </div>
+          </div>
+
           {/* Quick Git Commands Box */}
           <div className="space-y-2">
             <div className="flex items-center justify-between text-xs font-mono text-slate-400">
-              <span>Quick Git Push Commands</span>
+              <span>Push to New GitHub Repository</span>
               <button
                 onClick={handleCopyCommand}
                 className="text-teal-400 hover:underline flex items-center gap-1"
@@ -98,11 +109,9 @@ export const RenderGuideModal: React.FC<RenderGuideModalProps> = ({ isOpen, onCl
             </div>
             <pre className="p-4 rounded-2xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300 overflow-x-auto">
 <code>cd "/Users/mr./Library/Mrr../website/portfolio"
-git init
-git add .
-git commit -m "Deploy portfolio to Render"
-# Link your GitHub repository and push:
-# git push -u origin main</code>
+git remote add origin https://github.com/&lt;your-username&gt;/himanshu-portfolio.git
+git branch -M main
+git push -u origin main</code>
             </pre>
           </div>
 
