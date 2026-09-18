@@ -5,9 +5,9 @@
 services:
   - type: web
     name: himanshu-sheta-portfolio
-    env: static
-    buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
+    env: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
     autoDeploy: true
     routes:
       - type: rewrite

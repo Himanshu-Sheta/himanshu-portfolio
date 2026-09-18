@@ -5,8 +5,9 @@ node_modules
 # Production build output
 dist
 build
+.next
 
-# Vite & IDE cache
+# IDE cache
 .vite
 .vscode
 .idea

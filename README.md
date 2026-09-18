@@ -23,10 +23,26 @@ This project is a high-performance, modern developer portfolio built for **Himan
 
 When connected to Render, **Auto-Deploy is enabled by default**. 
 
+### Local development
+
+```bash
+npm install
+npm run dev
+```
+
+The app runs on `http://localhost:3000` with Next.js App Router, React 19, TypeScript, Tailwind CSS, Framer Motion, and Turbopack.
+
+For a production check:
+
+```bash
+npm run build
+npm run start
+```
+
 Whenever you push new changes to GitHub:
 ```bash
 git add .
 git commit -m "Updated portfolio content"
 git push
 ```
-Render will automatically trigger a build (`npm run build`) and update your online site live within seconds!
+Render will automatically run `npm ci && npm run build`, start the Next.js server with `npm run start`, and update your online site.
