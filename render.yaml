@@ -1,0 +1,15 @@
+# Render Blueprint configuration for Himanshu Sheta Portfolio
+# Account Email: professorrrr31@gmail.com
+# To deploy: Connect repository on https://dashboard.render.com/blueprints
+
+services:
+  - type: web
+    name: himanshu-sheta-portfolio
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    autoDeploy: true
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
