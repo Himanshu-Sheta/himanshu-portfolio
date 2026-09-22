@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PROJECTS, ProjectItem } from '../data/portfolioData';
 import { Layers, Sparkles, ExternalLink, Calendar, CheckCircle2, ChevronRight, X, Cpu, Database, Eye } from 'lucide-react';
+import { Reveal } from './Reveal';
 
 export const ProjectsSection: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
@@ -22,17 +23,17 @@ export const ProjectsSection: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-20 relative">
+    <section id="projects" className="projects-section py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
+        <Reveal className="text-center max-w-3xl mx-auto mb-12 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border border-indigo-500/30 text-xs font-mono text-indigo-300">
             <Layers className="w-3.5 h-3.5" />
             <span>Portfolio Highlights</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-300 to-indigo-400">Engineering Projects</span>
+            Featured <span className="heading-muted">Engineering Projects</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
             Real-world software applications, automated ETL pipelines, computer vision ML models, and full-stack web platforms from my resume.
@@ -54,11 +55,12 @@ export const ProjectsSection: React.FC = () => {
               </button>
             ))}
           </div>
-        </div>
+        </Reveal>
 
         {/* Projects Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
+            <Reveal key={project.id} delay={0.08 * filteredProjects.indexOf(project)}>
             <div
               key={project.id}
               className="glass-panel rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-teal-500/40 transition-all duration-300 group hover:-translate-y-1"
@@ -118,6 +120,7 @@ export const ProjectsSection: React.FC = () => {
                 </button>
               </div>
             </div>
+            </Reveal>
           ))}
         </div>
 

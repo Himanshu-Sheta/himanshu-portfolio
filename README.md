@@ -2,9 +2,7 @@
 
 > **Advanced Software Engineer & Data Engineer Portfolio**
 > 
-> GitHub Repository: [https://github.com/proffesorsheta/himanshu-portfolio](https://github.com/proffesorsheta/himanshu-portfolio)
-> 
-> Online Deployment Target: **Render** (`professorrrr31@gmail.com`)
+> Online Deployment Target: **Render**
 
 ---
 

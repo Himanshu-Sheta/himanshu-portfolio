@@ -1,41 +1,43 @@
 import React from 'react';
 import { EXPERIENCES } from '../data/portfolioData';
 import { Briefcase, Calendar, MapPin, CheckCircle2, Building2, GraduationCap } from 'lucide-react';
+import { Reveal } from './Reveal';
 
 export const ExperienceSection: React.FC = () => {
   return (
-    <section id="experience" className="py-20 relative bg-slate-900/30">
+    <section id="experience" className="experience-section py-20 relative bg-slate-900/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <Reveal className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border border-emerald-500/30 text-xs font-mono text-emerald-300">
             <Briefcase className="w-3.5 h-3.5" />
             <span>Career History</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Work Experience</span>
+            Professional <span className="heading-muted">Work Experience</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
             Software engineering and data engineering experience in Germany and India across academic research, tech firms, and web agencies.
           </p>
-        </div>
+        </Reveal>
 
         {/* Timeline Container */}
-        <div className="max-w-4xl mx-auto space-y-8 relative before:absolute before:inset-0 before:left-4 sm:before:left-1/2 before:w-0.5 before:-translate-x-px before:bg-gradient-to-b before:from-teal-500 before:via-indigo-500 before:to-slate-800">
+        <div className="experience-timeline max-w-4xl mx-auto space-y-8 relative">
           
           {EXPERIENCES.map((exp, idx) => (
+            <Reveal key={exp.id} delay={0.08 * idx}>
             <div
               key={exp.id}
               className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group gap-8`}
             >
               {/* Timeline Center Badge Node */}
-              <div className="flex items-center justify-center w-9 h-9 rounded-full bg-slate-950 border-2 border-teal-400 text-teal-400 shadow-lg shadow-teal-500/30 shrink-0 z-10 absolute left-0 sm:left-1/2 -translate-x-1/2">
+              <div className="experience-node flex items-center justify-center w-9 h-9 rounded-full bg-slate-950 border-2 border-teal-400 text-teal-400 shadow-lg shadow-teal-500/30 shrink-0 z-10 absolute left-0 sm:left-1/2 -translate-x-1/2">
                 {exp.type === 'Master Thesis' ? <GraduationCap className="w-4 h-4" /> : <Building2 className="w-4 h-4" />}
               </div>
 
               {/* Card Container */}
-              <div className="w-[calc(100%-3rem)] sm:w-[calc(50%-2.5rem)] glass-panel p-6 rounded-2xl border border-slate-800 hover:border-teal-500/40 transition-all duration-300 space-y-4 ml-12 sm:ml-0">
+              <div className="experience-card w-[calc(100%-3rem)] sm:w-[calc(50%-2.5rem)] glass-panel p-6 rounded-2xl border border-slate-800 hover:border-teal-500/40 transition-all duration-300 space-y-4 ml-12 sm:ml-0">
                 {/* Header */}
                 <div className="space-y-1">
                   <div className="flex items-center justify-between text-xs font-mono">
@@ -71,6 +73,7 @@ export const ExperienceSection: React.FC = () => {
                 </ul>
               </div>
             </div>
+            </Reveal>
           ))}
 
         </div>

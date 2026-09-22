@@ -1,6 +1,7 @@
 import React from 'react';
 import { EDUCATION, LANGUAGES } from '../data/portfolioData';
 import { GraduationCap, Languages, Calendar, MapPin, CheckCircle2, Award } from 'lucide-react';
+import { Reveal } from './Reveal';
 
 export const EducationSection: React.FC = () => {
   return (
@@ -11,18 +12,19 @@ export const EducationSection: React.FC = () => {
           
           {/* Education Column */}
           <div className="lg:col-span-8 space-y-8">
-            <div className="space-y-3">
+            <Reveal className="space-y-3">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border border-indigo-500/30 text-xs font-mono text-indigo-300">
                 <GraduationCap className="w-3.5 h-3.5" />
                 <span>Academic Background</span>
               </div>
               <h2 className="text-3xl font-extrabold text-white">
-                Education & <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-indigo-400">Degrees</span>
+                Education & <span className="heading-muted">Degrees</span>
               </h2>
-            </div>
+            </Reveal>
 
             <div className="space-y-6">
               {EDUCATION.map((edu, idx) => (
+                <Reveal key={idx} delay={0.08 * idx}>
                 <div
                   key={idx}
                   className="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4 hover:border-teal-500/30 transition-all"
@@ -59,24 +61,26 @@ export const EducationSection: React.FC = () => {
                     </div>
                   </div>
                 </div>
+                </Reveal>
               ))}
             </div>
           </div>
 
           {/* Languages & Quick Summary Column */}
           <div className="lg:col-span-4 space-y-8">
-            <div className="space-y-3">
+            <Reveal className="space-y-3" delay={0.1}>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border border-teal-500/30 text-xs font-mono text-teal-300">
                 <Languages className="w-3.5 h-3.5" />
                 <span>Languages</span>
               </div>
               <h2 className="text-3xl font-extrabold text-white">
-                Language <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Proficiency</span>
+                Language <span className="heading-muted">Proficiency</span>
               </h2>
-            </div>
+            </Reveal>
 
             <div className="space-y-4">
               {LANGUAGES.map((lang) => (
+                <Reveal key={lang.name} delay={0.16}>
                 <div
                   key={lang.name}
                   className="glass-panel p-5 rounded-2xl border border-slate-800 flex items-center justify-between hover:border-teal-500/30 transition-all"
@@ -88,10 +92,8 @@ export const EducationSection: React.FC = () => {
                       <p className="text-xs text-slate-400 font-mono">{lang.level}</p>
                     </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full bg-teal-500/10 text-teal-300 text-xs font-mono border border-teal-500/20">
-                    Verified
-                  </span>
                 </div>
+                </Reveal>
               ))}
             </div>
 

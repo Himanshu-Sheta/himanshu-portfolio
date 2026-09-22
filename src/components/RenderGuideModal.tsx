@@ -26,7 +26,7 @@ export const RenderGuideModal: React.FC<RenderGuideModalProps> = ({ isOpen, onCl
     {
       step: "3",
       title: "Create New Static Site on Render",
-      desc: `Log in to dashboard.render.com with ${PERSONAL_INFO.renderAccountEmail}. Click 'New +' -> 'Static Site', and connect your new repository.`
+      desc: "Log in to dashboard.render.com, click 'New +' -> 'Static Site', and connect your new repository."
     },
     {
       step: "4",
@@ -64,9 +64,6 @@ export const RenderGuideModal: React.FC<RenderGuideModalProps> = ({ isOpen, onCl
             <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
               Host Online on <span className="text-teal-400">Render</span>
             </h3>
-            <p className="text-slate-300 text-xs sm:text-sm">
-              Configured for account email: <strong className="text-teal-300">{PERSONAL_INFO.renderAccountEmail}</strong>
-            </p>
           </div>
 
           {/* Steps List */}

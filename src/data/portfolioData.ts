@@ -33,9 +33,7 @@ export const PERSONAL_INFO = {
   location: "Deggendorf, Germany",
   phone: "+49 176 57828590",
   email: "himanshusheta2022@gmail.com",
-  renderAccountEmail: "professorrrr31@gmail.com",
   linkedin: "https://linkedin.com/in/himanshu-sheta",
-  github: "https://github.com/himanshusheta",
   livePortfolioUrl: "https://v0-himanshu-sheta.vercel.app",
   summary: "Advanced Software Engineer and M.Sc. Applied Computer Science candidate in Germany with extensive experience building scalable full-stack applications (React, Next.js, TypeScript, Python) and robust data engineering/ETL processing pipelines. Proven track record in computer vision, LLM integration, modular software architecture, and agile software development."
 };
@@ -145,50 +143,84 @@ export const PROJECTS: ProjectItem[] = [
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    title: "Software Engineering & Full-Stack",
+    title: "Languages",
     iconName: "Code2",
     skills: [
+      { name: "C", level: 75, tag: "Language" },
+      { name: "C++", level: 72, tag: "Language" },
+      { name: "PHP", level: 82, tag: "Backend" },
+      { name: "JavaScript", level: 94, tag: "Core" },
       { name: "TypeScript", level: 92, tag: "Primary" },
-      { name: "React.js / Next.js", level: 90, tag: "Primary" },
-      { name: "JavaScript (ES6+)", level: 94, tag: "Core" },
-      { name: "Python (REST / Microservices)", level: 88, tag: "Backend" },
-      { name: "PHP / OOP Architecture", level: 82, tag: "Backend" },
-      { name: "HTML5 / CSS3 / Tailwind", level: 95, tag: "Frontend" },
-      { name: "Java & C", level: 75, tag: "Languages" }
+      { name: "Python", level: 88, tag: "Backend" },
+      { name: "R", level: 65, tag: "Analytics" }
     ]
   },
   {
-    title: "Data Engineering & AI / ML",
-    iconName: "BrainCircuit",
+    title: "Frontend & Web",
+    iconName: "Code2",
     skills: [
-      { name: "ETL & Pipeline Automation", level: 90, tag: "Data Eng" },
-      { name: "LLMs & Generative AI", level: 86, tag: "AI" },
-      { name: "Pandas & Data Processing", level: 88, tag: "Analytics" },
-      { name: "OpenCV & Computer Vision", level: 84, tag: "ML/CV" },
-      { name: "Scikit-Learn Machine Learning", level: 82, tag: "ML" },
-      { name: "Data Harmonization & Extraction", level: 92, tag: "ETL" }
+      { name: "React.js", level: 90, tag: "Frontend" },
+      { name: "Next.js", level: 90, tag: "Frontend" },
+      { name: "Vue.js", level: 70, tag: "Frontend" },
+      { name: "Node.js", level: 78, tag: "Backend" },
+      { name: "HTML", level: 95, tag: "Core" },
+      { name: "CSS", level: 95, tag: "Core" },
+      { name: "SCSS", level: 80, tag: "Styling" },
+      { name: "Bootstrap", level: 82, tag: "UI" },
+      { name: "Tailwind CSS", level: 92, tag: "UI" }
     ]
   },
   {
-    title: "Databases & Infrastructure",
+    title: "Backend & Data",
     iconName: "Database",
     skills: [
-      { name: "SQL & Relational Databases", level: 92, tag: "Database" },
-      { name: "PostgreSQL", level: 88, tag: "Database" },
+      { name: "RESTful APIs", level: 90, tag: "Backend" },
+      { name: "WebSockets", level: 78, tag: "Backend" },
       { name: "MySQL", level: 90, tag: "Database" },
-      { name: "Git & GitHub Workflows", level: 95, tag: "DevOps" },
-      { name: "Postman API Testing", level: 90, tag: "QA" },
-      { name: "Linux OS Environment", level: 85, tag: "OS" }
+      { name: "PostgreSQL", level: 88, tag: "Database" },
+      { name: "MongoDB", level: 75, tag: "Database" },
+      { name: "Custom ORM", level: 82, tag: "Architecture" },
+      { name: "SQL & Relational Databases", level: 92, tag: "Database" }
     ]
   },
   {
-    title: "Practices & Methodologies",
+    title: "Data & Machine Learning",
+    iconName: "BrainCircuit",
+    skills: [
+      { name: "Pandas", level: 88, tag: "Analytics" },
+      { name: "NumPy", level: 82, tag: "Analytics" },
+      { name: "Scikit-learn", level: 82, tag: "ML" },
+      { name: "TensorFlow", level: 70, tag: "ML" },
+      { name: "Plotly", level: 82, tag: "Visualization" },
+      { name: "Data Visualization", level: 88, tag: "Analytics" },
+      { name: "OpenCV", level: 84, tag: "Computer Vision" },
+      { name: "LLMs & Generative AI", level: 86, tag: "AI" }
+    ]
+  },
+  {
+    title: "Tools & Ways of Working",
     iconName: "Workflow",
     skills: [
-      { name: "Software Design & Architecture", level: 90, tag: "Architecture" },
-      { name: "Agile Scrum & Jira", level: 92, tag: "Process" },
-      { name: "Clean Code & Code Reviews", level: 94, tag: "Quality" },
-      { name: "Software Testing & QA", level: 88, tag: "Testing" }
+      { name: "Git", level: 95, tag: "Version Control" },
+      { name: "GitLab", level: 82, tag: "Collaboration" },
+      { name: "VS Code", level: 95, tag: "Tooling" },
+      { name: "Agile", level: 92, tag: "Process" },
+      { name: "Scrum", level: 92, tag: "Process" },
+      { name: "Testing", level: 88, tag: "Quality" },
+      { name: "Accessibility", level: 82, tag: "Frontend" },
+      { name: "Postman", level: 90, tag: "API Testing" }
+    ]
+  },
+  {
+    title: "Strengths",
+    iconName: "Users",
+    skills: [
+      { name: "Problem-solving", level: 95, tag: "Strength" },
+      { name: "Communication", level: 90, tag: "Strength" },
+      { name: "Teamwork", level: 92, tag: "Strength" },
+      { name: "Ownership", level: 92, tag: "Strength" },
+      { name: "Time Management", level: 88, tag: "Strength" },
+      { name: "Continuous Learning", level: 95, tag: "Strength" }
     ]
   }
 ];
