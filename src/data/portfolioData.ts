@@ -18,6 +18,8 @@ export interface ProjectItem {
   bullets: string[];
   metrics?: string;
   featured: boolean;
+  githubUrl?: string;
+  liveDemoUrl?: string;
 }
 
 export interface SkillCategory {
@@ -28,14 +30,16 @@ export interface SkillCategory {
 
 export const PERSONAL_INFO = {
   name: "Himanshu Sheta",
-  title: "Advanced Software Engineer & Data Engineer",
-  subtitle: "Full-Stack Developer | TypeScript | React | Python | AI & Data Processing",
-  location: "Deggendorf, Germany",
+  title: "Software Engineer | Java, Spring Boot & Python",
+  subtitle: "Enterprise Backend & Generative AI Systems • Deggendorf, Germany",
+  location: "Deggendorf, Germany (Ready to Relocate Germany-wide | Remote & Hybrid)",
   phone: "+49 176 57828590",
   email: "himanshusheta2022@gmail.com",
+  github: "https://github.com/Himanshu-Sheta",
   linkedin: "https://linkedin.com/in/himanshu-sheta",
-  livePortfolioUrl: "https://v0-himanshu-sheta.vercel.app",
-  summary: "Advanced Software Engineer and M.Sc. Applied Computer Science candidate in Germany with extensive experience building scalable full-stack applications (React, Next.js, TypeScript, Python) and robust data engineering/ETL processing pipelines. Proven track record in computer vision, LLM integration, modular software architecture, and agile software development."
+  livePortfolioUrl: "https://himanshusheta-portfolio.onrender.com",
+  availability: "Ready to Relocate Anywhere in Germany • Open to Remote, Hybrid & On-Site",
+  summary: "Software Engineer with ~3 years of practical experience across enterprise backend systems (Java, Spring Boot, SQL) and modern Generative AI architectures (Python, LLM orchestration, RAG, Anthropic Claude, Azure AI). M.Sc. Applied Computer Science candidate at Technische Hochschule Deggendorf."
 };
 
 export const EXPERIENCES: ExperienceItem[] = [
@@ -63,13 +67,11 @@ export const EXPERIENCES: ExperienceItem[] = [
     period: "04/2024 – 10/2025",
     type: "Working Student",
     highlights: [
-      "Developed full-stack web applications using TypeScript, JavaScript, React.js, Next.js, and Python.",
-      "Implemented frontend features and browser-based application components using React.js and TypeScript.",
-      "Developed backend services and REST APIs using Python and object-oriented programming principles.",
-      "Designed and integrated application functionality across frontend and backend systems.",
-      "Worked with SQL and relational databases for application data management and backend development.",
-      "Developed reusable software components focusing on maintainability, scalability, and clean software architecture.",
-      "Performed software testing, debugging, troubleshooting, and quality assurance in Agile Scrum teams using Jira and Git."
+      "Engineered high-performance backend services and REST APIs in Java (Spring Boot) and Python on PostgreSQL and MongoDB.",
+      "Implemented responsive web applications using React, TypeScript, and Next.js (Redux, Material UI, Tailwind CSS).",
+      "Integrated Generative AI & LLM APIs into production workflows, refining prompt pipelines and evaluating output reliability.",
+      "Collaborated in Agile Scrum teams utilizing Docker, Kubernetes, and automated CI/CD pipelines (GitHub Actions, Azure DevOps).",
+      "Conducted automated unit/integration testing and active code reviews using Git, IntelliJ, Jira, and Confluence."
     ]
   },
   {
@@ -80,8 +82,8 @@ export const EXPERIENCES: ExperienceItem[] = [
     period: "02/2020 – 11/2021",
     type: "Full-Time",
     highlights: [
-      "Developed full-stack browser-based applications using PHP, JavaScript, HTML, CSS, and MySQL.",
-      "Implemented frontend features, backend application logic, and REST/API integrations.",
+      "Developed full-stack web applications for real-world business users using PHP (Laravel), JavaScript (jQuery), HTML, CSS, and MySQL.",
+      "Implemented frontend features, backend application logic, and RESTful API integrations.",
       "Developed reusable backend modules using object-oriented programming principles.",
       "Designed and maintained relational database structures and optimized SQL queries.",
       "Collaborated with cross-functional development teams to deliver features and resolve production issues."
@@ -90,6 +92,24 @@ export const EXPERIENCES: ExperienceItem[] = [
 ];
 
 export const PROJECTS: ProjectItem[] = [
+  {
+    id: "proj-foundation-models",
+    title: "Enterprise Foundation Models & AI Platform",
+    period: "10/2026 – Present",
+    category: "Data & AI",
+    techStack: ["Anthropic Claude 3.5", "Microsoft Azure AI", "Hybrid Vector RAG", "FastAPI", "Python", "Streamlit", "Docker"],
+    description: "Production-ready enterprise multi-model AI platform orchestrating Anthropic Claude 3.5 and Azure OpenAI with automated failover, Azure AI Search hybrid retrieval (RAG), and Azure Content Safety guardrails.",
+    bullets: [
+      "Architected dual-model gateway with automated zero-downtime failover between Anthropic Claude 3.5 and Azure OpenAI GPT-4o.",
+      "Engineered Azure AI Search Hybrid RAG pipeline combining HNSW vector search with BM25 keyword rankings via Reciprocal Rank Fusion.",
+      "Developed autonomous multi-step agentic orchestrator with financial modeling and cloud infrastructure telemetry tools.",
+      "Integrated Azure AI Content Safety pre-filtering to defend against prompt injection and toxic content.",
+      "Implemented real-time FinOps telemetry tracking token counts, latency, and dynamic USD cost attribution with 90% prompt caching savings."
+    ],
+    metrics: "90% prompt caching cost savings & 99.99% high-availability failover",
+    featured: true,
+    githubUrl: "https://github.com/Himanshu-Sheta/foundation-models-azure-claude-platform"
+  },
   {
     id: "proj-1",
     title: "AI Automation & Data Analytics Platform",
@@ -105,7 +125,8 @@ export const PROJECTS: ProjectItem[] = [
       "Applied software engineering principles to structure, test, and maintain data-processing components."
     ],
     metrics: "Automated 80%+ data workflows & accelerated analytics pipelines",
-    featured: true
+    featured: true,
+    githubUrl: "https://github.com/Himanshu-Sheta/ai-native-etl-automation"
   },
   {
     id: "proj-2",
@@ -121,7 +142,8 @@ export const PROJECTS: ProjectItem[] = [
       "Applied data preprocessing, validation, and model evaluation techniques."
     ],
     metrics: "High precision rooftop surface segmentation & capacity estimation",
-    featured: true
+    featured: true,
+    githubUrl: "https://github.com/Himanshu-Sheta/solar-rooftop-capacity-prediction"
   },
   {
     id: "proj-3",
@@ -137,105 +159,90 @@ export const PROJECTS: ProjectItem[] = [
       "Tested, debugged, and optimized application performance for high throughput."
     ],
     metrics: "Streamlined peak-hour table allocation & queue management",
-    featured: true
+    featured: true,
+    githubUrl: "https://github.com/Himanshu-Sheta/hotel-waiting-management-system"
   }
 ];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    title: "Languages",
+    title: "Languages & Frameworks",
     iconName: "Code2",
     skills: [
-      { name: "C", level: 75, tag: "Language" },
-      { name: "C++", level: 72, tag: "Language" },
-      { name: "PHP", level: 82, tag: "Backend" },
-      { name: "JavaScript", level: 94, tag: "Core" },
-      { name: "TypeScript", level: 92, tag: "Primary" },
-      { name: "Python", level: 88, tag: "Backend" },
-      { name: "R", level: 65, tag: "Analytics" }
+      { name: "Java", level: 92, tag: "Core Enterprise" },
+      { name: "Spring Boot", level: 90, tag: "Backend Microservices" },
+      { name: "Python", level: 92, tag: "Backend & AI" },
+      { name: "TypeScript", level: 90, tag: "Full-Stack" },
+      { name: "JavaScript", level: 92, tag: "Core Web" },
+      { name: "SQL", level: 92, tag: "Database" },
+      { name: "PHP (Laravel)", level: 80, tag: "Backend" },
+      { name: "C / C++", level: 75, tag: "Systems" }
     ]
   },
   {
-    title: "Frontend & Web",
-    iconName: "Code2",
-    skills: [
-      { name: "React.js", level: 90, tag: "Frontend" },
-      { name: "Next.js", level: 90, tag: "Frontend" },
-      { name: "Vue.js", level: 70, tag: "Frontend" },
-      { name: "Node.js", level: 78, tag: "Backend" },
-      { name: "HTML", level: 95, tag: "Core" },
-      { name: "CSS", level: 95, tag: "Core" },
-      { name: "SCSS", level: 80, tag: "Styling" },
-      { name: "Bootstrap", level: 82, tag: "UI" },
-      { name: "Tailwind CSS", level: 92, tag: "UI" }
-    ]
-  },
-  {
-    title: "Backend & Data",
+    title: "Backend & Cloud Systems",
     iconName: "Database",
     skills: [
-      { name: "RESTful APIs", level: 90, tag: "Backend" },
-      { name: "WebSockets", level: 78, tag: "Backend" },
-      { name: "MySQL", level: 90, tag: "Database" },
-      { name: "PostgreSQL", level: 88, tag: "Database" },
-      { name: "MongoDB", level: 75, tag: "Database" },
-      { name: "Custom ORM", level: 82, tag: "Architecture" },
-      { name: "SQL & Relational Databases", level: 92, tag: "Database" }
+      { name: "RESTful APIs", level: 95, tag: "Architecture" },
+      { name: "Spring Boot", level: 90, tag: "Framework" },
+      { name: "FastAPI", level: 92, tag: "Async Python" },
+      { name: "PostgreSQL", level: 90, tag: "Relational" },
+      { name: "MongoDB", level: 82, tag: "NoSQL" },
+      { name: "MySQL", level: 90, tag: "Relational" },
+      { name: "Docker & Kubernetes", level: 85, tag: "DevOps" },
+      { name: "CI/CD (GitHub Actions, Azure DevOps)", level: 88, tag: "Automation" }
     ]
   },
   {
-    title: "Data & Machine Learning",
+    title: "Generative AI & Data Engineering",
     iconName: "BrainCircuit",
     skills: [
-      { name: "Pandas", level: 88, tag: "Analytics" },
-      { name: "NumPy", level: 82, tag: "Analytics" },
-      { name: "Scikit-learn", level: 82, tag: "ML" },
-      { name: "TensorFlow", level: 70, tag: "ML" },
-      { name: "Plotly", level: 82, tag: "Visualization" },
-      { name: "Data Visualization", level: 88, tag: "Analytics" },
-      { name: "OpenCV", level: 84, tag: "Computer Vision" },
-      { name: "LLMs & Generative AI", level: 86, tag: "AI" }
+      { name: "Anthropic Claude & Azure OpenAI", level: 92, tag: "LLMs" },
+      { name: "Hybrid Vector RAG (Azure AI Search)", level: 90, tag: "Retrieval" },
+      { name: "Agentic Tool Calling Workflows", level: 88, tag: "Agents" },
+      { name: "AI Safety Guardrails & Prompt Shield", level: 88, tag: "Governance" },
+      { name: "ETL Pipelines (Pandas, NumPy)", level: 90, tag: "Data Engineering" },
+      { name: "Computer Vision (OpenCV)", level: 84, tag: "ML" },
+      { name: "Scikit-learn", level: 82, tag: "Machine Learning" }
     ]
   },
   {
-    title: "Tools & Ways of Working",
+    title: "Frontend & Web Engineering",
+    iconName: "Code2",
+    skills: [
+      { name: "React.js", level: 92, tag: "Frontend" },
+      { name: "Next.js", level: 90, tag: "Full-Stack" },
+      { name: "Tailwind CSS", level: 92, tag: "Styling" },
+      { name: "Redux & State Management", level: 85, tag: "Frontend" },
+      { name: "Responsive Web Design", level: 95, tag: "Core" }
+    ]
+  },
+  {
+    title: "Tools & Methods",
     iconName: "Workflow",
     skills: [
-      { name: "Git", level: 95, tag: "Version Control" },
-      { name: "GitLab", level: 82, tag: "Collaboration" },
-      { name: "VS Code", level: 95, tag: "Tooling" },
-      { name: "Agile", level: 92, tag: "Process" },
-      { name: "Scrum", level: 92, tag: "Process" },
-      { name: "Testing", level: 88, tag: "Quality" },
-      { name: "Accessibility", level: 82, tag: "Frontend" },
-      { name: "Postman", level: 90, tag: "API Testing" }
-    ]
-  },
-  {
-    title: "Strengths",
-    iconName: "Users",
-    skills: [
-      { name: "Problem-solving", level: 95, tag: "Strength" },
-      { name: "Communication", level: 90, tag: "Strength" },
-      { name: "Teamwork", level: 92, tag: "Strength" },
-      { name: "Ownership", level: 92, tag: "Strength" },
-      { name: "Time Management", level: 88, tag: "Strength" },
-      { name: "Continuous Learning", level: 95, tag: "Strength" }
+      { name: "Git & GitHub", level: 95, tag: "VCS" },
+      { name: "Docker", level: 88, tag: "Containers" },
+      { name: "Kubernetes", level: 78, tag: "Orchestration" },
+      { name: "Azure DevOps & Cloud", level: 82, tag: "Cloud" },
+      { name: "Jira & Confluence", level: 90, tag: "Agile" },
+      { name: "Scrum & Kanban", level: 92, tag: "Methodology" },
+      { name: "IntelliJ IDEA & VS Code", level: 95, tag: "IDEs" }
     ]
   }
 ];
 
 export const EDUCATION = [
   {
-    degree: "M.Sc. Applied Computer Science",
+    degree: "M.Sc. Applied Computer Science (Informatik)",
     institution: "Technische Hochschule Deggendorf",
     location: "Deggendorf, Germany",
-    period: "10/2023 – Present",
+    period: "10/2023 – Expected 11/2026",
     focus: [
-      "Software Engineering",
+      "Software Engineering & Architecture",
       "Artificial Intelligence & Machine Learning",
       "Data Analytics & Processing Pipelines",
-      "Object-Oriented Programming",
+      "Object-Oriented Programming (Java, C++)",
       "Computer Vision"
     ]
   },

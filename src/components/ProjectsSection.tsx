@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PROJECTS, ProjectItem } from '../data/portfolioData';
-import { Layers, Sparkles, ExternalLink, Calendar, CheckCircle2, ChevronRight, X, Cpu, Database, Eye } from 'lucide-react';
+import { Layers, Sparkles, ExternalLink, Calendar, CheckCircle2, ChevronRight, X, Cpu, Database, Eye, Github } from 'lucide-react';
 import { Reveal } from './Reveal';
 
 export const ProjectsSection: React.FC = () => {
@@ -57,13 +57,13 @@ export const ProjectsSection: React.FC = () => {
           </div>
         </Reveal>
 
-        {/* Projects Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Projects Cards Grid (2x2 layout on desktop) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredProjects.map((project) => (
             <Reveal key={project.id} delay={0.08 * filteredProjects.indexOf(project)}>
             <div
               key={project.id}
-              className="glass-panel rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-teal-500/40 transition-all duration-300 group hover:-translate-y-1"
+              className="glass-panel rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-teal-500/40 transition-all duration-300 group hover:-translate-y-1 h-full"
             >
               <div className="space-y-4">
                 {/* Top Badge Row */}
@@ -109,15 +109,27 @@ export const ProjectsSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* View Details Button */}
-              <div className="pt-6 border-t border-slate-800/80 mt-6">
+              {/* Action Buttons: Details + GitHub */}
+              <div className="pt-6 border-t border-slate-800/80 mt-6 flex items-center gap-3">
                 <button
                   onClick={() => setSelectedProject(project)}
-                  className="w-full py-2.5 px-4 rounded-xl glass-card text-teal-300 hover:text-white hover:bg-slate-800 border border-teal-500/30 text-xs font-semibold flex items-center justify-center gap-2 transition-all"
+                  className="flex-1 py-2.5 px-4 rounded-xl glass-card text-teal-300 hover:text-white hover:bg-slate-800 border border-teal-500/30 text-xs font-semibold flex items-center justify-center gap-2 transition-all"
                 >
-                  <span>View Full Details & Architecture</span>
+                  <span>Architecture & Details</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`View ${project.title} on GitHub`}
+                    title="View Source on GitHub"
+                    className="p-2.5 rounded-xl bg-slate-900 hover:bg-teal-500 text-slate-300 hover:text-slate-950 border border-slate-800 hover:border-teal-500 transition-all flex items-center justify-center shrink-0"
+                  >
+                    <Github className="w-4 h-4" />
+                  </a>
+                )}
               </div>
             </div>
             </Reveal>
@@ -184,7 +196,19 @@ export const ProjectsSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 flex justify-end">
+              <div className="pt-4 border-t border-slate-800 flex items-center justify-between gap-3">
+                {selectedProject.githubUrl ? (
+                  <a
+                    href={selectedProject.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs transition-all shadow-md shadow-teal-500/20"
+                  >
+                    <Github className="w-4 h-4" />
+                    <span>View Repository on GitHub</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                ) : <div />}
                 <button
                   onClick={() => setSelectedProject(null)}
                   className="px-5 py-2.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-semibold hover:bg-slate-700"

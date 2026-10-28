@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDownRight, ArrowUpRight, Download, Mail, MapPin } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Download, Mail, MapPin, Github } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface HeroSectionProps {
@@ -8,7 +8,12 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenCvModal }) => {
-  const roles = ['Software developer', 'Data engineer', 'Product-minded builder'];
+  const roles = [
+    'Java & Spring Boot Engineer',
+    'Generative AI & Cloud Developer',
+    'Full-Stack Software Engineer',
+    'Product-Minded Builder'
+  ];
   const [roleIndex, setRoleIndex] = useState(0);
   const [photoFailed, setPhotoFailed] = useState(false);
 
@@ -31,19 +36,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenCvModal }) => {
               />
             ) : <div className="portrait-initials">HS</div>}
             <div className="portrait-overlay" />
-            <span className="portrait-caption">Software + data</span>
+            <span className="portrait-caption">Java • AI • Cloud</span>
           </div>
-          <div className="portrait-note"><MapPin size={13} /> Deggendorf, Germany</div>
+          <div className="portrait-note">
+            <MapPin size={13} /> Deggendorf, Germany • Relocation & Remote Ready
+          </div>
         </motion.div>
         <motion.div className="hero-copy" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.12 }}>
           <p className="eyebrow">{roles[roleIndex]} <span className="eyebrow-dot" /></p>
           <h1>I build products<br />people can rely on.</h1>
-          <p className="hero-summary">I&apos;m {PERSONAL_INFO.name}, a software developer who turns complex requirements and data into accessible, scalable web experiences with React, Next.js, Python, and modern APIs.</p>
+          <p className="hero-summary">
+            I&apos;m {PERSONAL_INFO.name}, a Software Engineer specializing in scalable enterprise backend architectures with Java, Spring Boot, and SQL, combined with modern Generative AI engineering (Python, Anthropic Claude, Azure AI, and React/Next.js).
+          </p>
           <div className="hero-actions">
             <button className="button-dark" onClick={onOpenCvModal}><Download size={15} /> Download CV</button>
             <a className="button-light" href={`mailto:${PERSONAL_INFO.email}`}><Mail size={15} /> Let&apos;s connect</a>
           </div>
           <div className="hero-links">
+            <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={13} /></a>
             <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={13} /></a>
             <a href="#experience">See my experience <ArrowDownRight size={13} /></a>
           </div>

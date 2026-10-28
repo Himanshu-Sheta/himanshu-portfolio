@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Linkedin, MapPin } from 'lucide-react';
+import { Mail, Linkedin, MapPin, Github } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { Reveal } from './Reveal';
 
@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
             Let&apos;s build something useful.
           </h2>
           <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto">
-            Open to software development opportunities, working student roles, and thoughtful collaborations.
+            Open to software engineering opportunities, working student roles, and technical collaborations across Germany (Remote & On-Site).
           </p>
         </Reveal>
 
@@ -22,12 +22,13 @@ export const Footer: React.FC = () => {
           <div className="contact-info-card glass-panel p-4 sm:p-5 space-y-3">
             <div>
               <h3 className="text-base font-bold text-white">Contact Information</h3>
-              <p className="text-sm text-slate-400 mt-1">Feel free to reach out to me.</p>
+              <p className="text-sm text-slate-400 mt-1">Feel free to reach out via email or LinkedIn.</p>
             </div>
             <div className="contact-details space-y-4">
-              <div className="contact-detail"><MapPin size={18} /><div><strong>Location</strong><span>{PERSONAL_INFO.location}</span></div></div>
+              <div className="contact-detail"><MapPin size={18} /><div><strong>Location & Availability</strong><span>{PERSONAL_INFO.location}</span></div></div>
               <a className="contact-detail" href={`mailto:${PERSONAL_INFO.email}`}><Mail size={18} /><div><strong>Email</strong><span>{PERSONAL_INFO.email}</span></div></a>
               <a className="contact-detail" href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer"><Linkedin size={18} /><div><strong>LinkedIn</strong><span>linkedin.com/in/himanshu-sheta</span></div></a>
+              <a className="contact-detail" href={PERSONAL_INFO.github} target="_blank" rel="noreferrer"><Github size={18} /><div><strong>GitHub</strong><span>github.com/Himanshu-Sheta</span></div></a>
             </div>
           </div>
         </Reveal>
@@ -36,14 +37,14 @@ export const Footer: React.FC = () => {
         <div className="footer-divider" aria-hidden="true" />
         <div className="site-footer-bottom flex flex-col sm:flex-row items-center justify-between gap-4 pt-5 text-xs text-slate-400 font-mono">
           <div className="footer-socials flex items-center gap-4">
+            <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub" className="footer-social-link"><Github size={16} /></a>
             <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn" className="footer-social-link"><Linkedin size={16} /></a>
             <a href={`mailto:${PERSONAL_INFO.email}`} aria-label="Email" title="Email" className="footer-social-link"><Mail size={16} /></a>
           </div>
 
-          <div className="hidden sm:block">
-            © {new Date().getFullYear()} {PERSONAL_INFO.name} • Deggendorf, Germany
+          <div className="text-center sm:text-right text-[11px] text-slate-500">
+            © {new Date().getFullYear()} {PERSONAL_INFO.name} • Deggendorf, Germany • Angaben gem. § 5 TMG
           </div>
-
         </div>
 
       </div>
