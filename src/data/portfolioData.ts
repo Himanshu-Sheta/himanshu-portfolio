@@ -166,68 +166,69 @@ export const PROJECTS: ProjectItem[] = [
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    title: "Languages & Frameworks",
-    iconName: "Code2",
+    title: "Backend & Systems Engineering",
+    iconName: "Database",
     skills: [
       { name: "Java", level: 92, tag: "Core Enterprise" },
-      { name: "Spring Boot", level: 90, tag: "Backend Microservices" },
-      { name: "Python", level: 92, tag: "Backend & AI" },
-      { name: "TypeScript", level: 90, tag: "Full-Stack" },
-      { name: "JavaScript", level: 92, tag: "Core Web" },
-      { name: "SQL", level: 92, tag: "Database" },
+      { name: "Spring Boot", level: 90, tag: "Microservices & REST" },
+      { name: "Python", level: 92, tag: "Backend & Systems" },
+      { name: "FastAPI", level: 92, tag: "Async APIs" },
+      { name: "RESTful APIs", level: 95, tag: "Design & Specs" },
+      { name: "Event-Driven & Async Processing", level: 85, tag: "Architecture" },
       { name: "PHP (Laravel)", level: 80, tag: "Backend" },
       { name: "C / C++", level: 75, tag: "Systems" }
     ]
   },
   {
-    title: "Backend & Cloud Systems",
+    title: "Databases & Data Systems",
     iconName: "Database",
     skills: [
-      { name: "RESTful APIs", level: 95, tag: "Architecture" },
-      { name: "Spring Boot", level: 90, tag: "Framework" },
-      { name: "FastAPI", level: 92, tag: "Async Python" },
       { name: "PostgreSQL", level: 90, tag: "Relational" },
-      { name: "MongoDB", level: 82, tag: "NoSQL" },
+      { name: "MongoDB", level: 85, tag: "NoSQL" },
       { name: "MySQL", level: 90, tag: "Relational" },
-      { name: "Docker & Kubernetes", level: 85, tag: "DevOps" },
-      { name: "CI/CD (GitHub Actions, Azure DevOps)", level: 88, tag: "Automation" }
-    ]
-  },
-  {
-    title: "Generative AI & Data Engineering",
-    iconName: "BrainCircuit",
-    skills: [
-      { name: "Anthropic Claude & Azure OpenAI", level: 92, tag: "LLMs" },
-      { name: "Hybrid Vector RAG (Azure AI Search)", level: 90, tag: "Retrieval" },
-      { name: "Agentic Tool Calling Workflows", level: 88, tag: "Agents" },
-      { name: "AI Safety Guardrails & Prompt Shield", level: 88, tag: "Governance" },
-      { name: "ETL Pipelines (Pandas, NumPy)", level: 90, tag: "Data Engineering" },
-      { name: "Computer Vision (OpenCV)", level: 84, tag: "ML" },
-      { name: "Scikit-learn", level: 82, tag: "Machine Learning" }
+      { name: "Oracle DB", level: 75, tag: "Enterprise DB" },
+      { name: "SQL Optimization & Indexing", level: 92, tag: "Performance" },
+      { name: "ETL Pipelines (Pandas, NumPy)", level: 90, tag: "Data Engineering" }
     ]
   },
   {
     title: "Frontend & Web Engineering",
     iconName: "Code2",
     skills: [
-      { name: "React.js", level: 92, tag: "Frontend" },
-      { name: "Next.js", level: 90, tag: "Full-Stack" },
-      { name: "Tailwind CSS", level: 92, tag: "Styling" },
-      { name: "Redux & State Management", level: 85, tag: "Frontend" },
-      { name: "Responsive Web Design", level: 95, tag: "Core" }
+      { name: "React.js", level: 92, tag: "UI Components" },
+      { name: "Next.js", level: 90, tag: "Full-Stack Web" },
+      { name: "TypeScript", level: 90, tag: "Type Safety" },
+      { name: "JavaScript (ES6+)", level: 92, tag: "Core Web" },
+      { name: "Tailwind CSS", level: 92, tag: "Modern Styling" },
+      { name: "Redux & State Management", level: 88, tag: "State" },
+      { name: "React Query (TanStack)", level: 88, tag: "Server State" },
+      { name: "Material UI (MUI) & Bootstrap", level: 85, tag: "UI Kits" },
+      { name: "Responsive Web Design", level: 95, tag: "Layouts" }
     ]
   },
   {
-    title: "Tools & Methods",
+    title: "Generative AI & LLM Systems",
+    iconName: "BrainCircuit",
+    skills: [
+      { name: "Anthropic Claude 3.5 & Azure OpenAI", level: 92, tag: "Foundation Models" },
+      { name: "Hybrid Vector RAG (Azure AI Search)", level: 90, tag: "Retrieval" },
+      { name: "Agentic Tool Calling Workflows", level: 88, tag: "Autonomous Agents" },
+      { name: "AI Safety Guardrails & Prompt Shield", level: 88, tag: "Governance" },
+      { name: "Computer Vision (OpenCV)", level: 84, tag: "Image Processing" },
+      { name: "Scikit-learn", level: 82, tag: "Machine Learning" }
+    ]
+  },
+  {
+    title: "Cloud, DevOps & Agile Methods",
     iconName: "Workflow",
     skills: [
-      { name: "Git & GitHub", level: 95, tag: "VCS" },
       { name: "Docker", level: 88, tag: "Containers" },
-      { name: "Kubernetes", level: 78, tag: "Orchestration" },
-      { name: "Azure DevOps & Cloud", level: 82, tag: "Cloud" },
-      { name: "Jira & Confluence", level: 90, tag: "Agile" },
-      { name: "Scrum & Kanban", level: 92, tag: "Methodology" },
-      { name: "IntelliJ IDEA & VS Code", level: 95, tag: "IDEs" }
+      { name: "Kubernetes", level: 80, tag: "Orchestration" },
+      { name: "CI/CD (GitHub Actions, Azure DevOps)", level: 90, tag: "Pipelines" },
+      { name: "AWS Fundamentals & Linux", level: 80, tag: "Cloud & OS" },
+      { name: "Git & Version Control", level: 95, tag: "Collaboration" },
+      { name: "IntelliJ IDEA, Eclipse, VS Code", level: 95, tag: "IDEs" },
+      { name: "Jira, Confluence, Scrum & Kanban", level: 92, tag: "Agile Delivery" }
     ]
   }
 ];
