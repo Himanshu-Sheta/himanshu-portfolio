@@ -43,7 +43,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="text-center sm:text-right text-[11px] text-slate-500">
-            © {new Date().getFullYear()} {PERSONAL_INFO.name} • Deggendorf, Germany • Angaben gem. § 5 TMG
+            © {new Date().getFullYear()} {PERSONAL_INFO.name} • Deggendorf, Germany
           </div>
         </div>
 
