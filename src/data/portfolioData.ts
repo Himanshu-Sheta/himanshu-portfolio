@@ -111,22 +111,22 @@ export const PROJECTS: ProjectItem[] = [
     githubUrl: "https://github.com/Himanshu-Sheta/foundation-models-azure-claude-platform"
   },
   {
-    id: "proj-1",
-    title: "AI Automation & Data Analytics Platform",
-    period: "02/2024 – 07/2024",
+    id: "proj-omnirag",
+    title: "OmniRAG: Hybrid RAG Chatbot & Knowledge Assistant",
+    period: "11/2026 – Present",
     category: "Data & AI",
-    techStack: ["Python", "Pandas", "Scikit-learn", "LLMs", "Data Processing", "ETL Pipelines"],
-    description: "Enterprise software workflow engine for automated data processing, intelligent analytics, and Large Language Model integration.",
+    techStack: ["FastAPI", "Python", "Hybrid RAG (BM25 + Cosine)", "Reciprocal Rank Fusion", "SSE Streaming", "Docker"],
+    description: "Production conversational RAG chatbot with mathematical provenance citations, sub-450ms p95 latency, AI safety guardrails, and real-time Server-Sent Events (SSE) streaming.",
     bullets: [
-      "Developed Python-based software workflows for automated data processing and analytics.",
-      "Built reusable ETL components for data extraction, transformation, validation, and processing.",
-      "Integrated Large Language Models (LLMs) into application workflows for intelligent data analysis.",
-      "Developed automated processing workflows to improve development efficiency and reduce repetitive tasks.",
-      "Applied software engineering principles to structure, test, and maintain data-processing components."
+      "Engineered Hybrid Information Retrieval combining BM25 sparse keyword ranking with dense vector semantic search, fused via Reciprocal Rank Fusion (RRF k=60).",
+      "Built interactive dark-mode Chatbox UI with real-time SSE token typewriter streaming and dynamic document ingestion (.md, .txt, .json, .csv).",
+      "Implemented mathematical provenance tracking rendering clickable citation cards with exact chunk IDs, relevance scores, and text excerpts.",
+      "Architected automated AI Safety Shield neutralizing prompt injection attacks and redacting PII according to GDPR Article 5 compliance.",
+      "Developed unified LLM adapter with zero-API-key offline grounded synthesis engine alongside OpenAI GPT-4o and Anthropic Claude integration."
     ],
-    metrics: "Automated 80%+ data workflows & accelerated analytics pipelines",
+    metrics: "p95 < 450ms retrieval latency & 100% citation grounding with 14/14 passing tests",
     featured: true,
-    githubUrl: "https://github.com/Himanshu-Sheta/ai-native-etl-automation"
+    githubUrl: "https://github.com/Himanshu-Sheta/agentic-ai-workflow-engine"
   },
   {
     id: "proj-2",
@@ -211,9 +211,9 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     iconName: "BrainCircuit",
     skills: [
       { name: "Anthropic Claude 3.5 & Azure OpenAI", level: 92, tag: "Foundation Models" },
-      { name: "Hybrid Vector RAG (Azure AI Search)", level: 90, tag: "Retrieval" },
-      { name: "Agentic Tool Calling Workflows", level: 88, tag: "Autonomous Agents" },
-      { name: "AI Safety Guardrails & Prompt Shield", level: 88, tag: "Governance" },
+      { name: "Hybrid Vector RAG (BM25 + Dense RRF)", level: 92, tag: "Retrieval" },
+      { name: "Real-Time SSE Streaming Chatbots", level: 90, tag: "Conversational AI" },
+      { name: "AI Safety Guardrails & Prompt Shield", level: 90, tag: "Governance & PII" },
       { name: "Computer Vision (OpenCV)", level: 84, tag: "Image Processing" },
       { name: "Scikit-learn", level: 82, tag: "Machine Learning" }
     ]
