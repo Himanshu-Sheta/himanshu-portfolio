@@ -111,6 +111,42 @@ export const PROJECTS: ProjectItem[] = [
     githubUrl: "https://github.com/Himanshu-Sheta/foundation-models-azure-claude-platform"
   },
   {
+    id: "proj-tycho-analytics",
+    title: "Project Tycho: US Disease Analytics & Surveillance (1887–2014)",
+    period: "03/2023 – 07/2023",
+    category: "Data & AI",
+    techStack: ["Python", "Pandas", "Streamlit", "Plotly", "ETL Pipelines", "Docker", "R"],
+    description: "End-to-end epidemiological data engineering pipeline and interactive analytics dashboard analyzing 3.65M CDC records across 50 infectious diseases over 125+ years.",
+    bullets: [
+      "Engineered chunked streaming ETL pipeline compressing 427 MB raw CDC records down to 2.5 MB pre-aggregated datasets with zero data loss.",
+      "Built 7-tab interactive Streamlit dashboard featuring animated US choropleth maps, decade-level morbidity rankers, and multi-disease time series.",
+      "Designed pre- and post-vaccine intervention heatmaps visualizing disease incidence eradication following vaccine introductions (e.g. Measles, Polio).",
+      "Generated publication-quality static visual figures and preserved reproducible R Markdown statistical validation workflows.",
+      "Containerized deployment with Docker and automated test suites verifying aggregations and morbidity calculations."
+    ],
+    metrics: "3.65M records processed across 50 diseases & all 50 US states",
+    featured: true,
+    githubUrl: "https://github.com/Himanshu-Sheta/project-tycho-us-disease-analytics"
+  },
+  {
+    id: "proj-genomic-visualizer",
+    title: "Genomic Signal Tracks & Positional k-mer Suite",
+    period: "04/2023 – 07/2023",
+    category: "Data & AI",
+    techStack: ["Python", "Streamlit", "Matplotlib", "Seaborn", "NumPy", "Pandas", "Docker"],
+    description: "Publication-grade RNA-Binding Protein genomic signal track visualizer and positional DNA k-mer motif enrichment analytics suite.",
+    bullets: [
+      "Engineered three genomic track visualization modalities (Small Multiples, Signal Heatmap, Overlaid Tracks) with forward and reverse strand annotations (+/-).",
+      "Created composite multi-panel scientific figures combining correlation scatter plots, grouped feature bars, and genomic signal heatmaps.",
+      "Implemented positional DNA k-mer frequency analysis with rolling background baselines and statistical Z-score peak detection.",
+      "Built interactive Streamlit explorer with real-time chromosome region filtering and publication figure exports (PNG/SVG/PDF).",
+      "Engineered automated test suite covering signal smoothing, track generation, and motif frequency distributions."
+    ],
+    metrics: "100% test coverage with sub-250ms rendering across multi-track figures",
+    featured: true,
+    githubUrl: "https://github.com/Himanshu-Sheta/genomic-signal-kmer-visualizer"
+  },
+  {
     id: "proj-omnirag",
     title: "OmniRAG: Hybrid RAG Chatbot & Knowledge Assistant",
     period: "11/2026 – Present",
@@ -188,7 +224,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: "MySQL", level: 90, tag: "Relational" },
       { name: "Oracle DB", level: 75, tag: "Enterprise DB" },
       { name: "SQL Optimization & Indexing", level: 92, tag: "Performance" },
-      { name: "ETL Pipelines (Pandas, NumPy)", level: 90, tag: "Data Engineering" }
+      { name: "ETL Pipelines (Pandas, NumPy)", level: 92, tag: "Data Engineering" },
+      { name: "Data Visualization (Plotly, Streamlit)", level: 90, tag: "Dashboards & Figures" }
     ]
   },
   {
